@@ -439,7 +439,7 @@ body {
 
 /*왼쪽절반*/
 .gname span::after {
-    
+
     content: '';
     position: absolute;
     width: 0%;
@@ -453,9 +453,10 @@ body {
     transition: width .3s ease-out;
     /*트랜지션: 속시이지*/
 }
+
 /*오른쪽절반*/
 .gname span::before {
-    
+
     content: '';
     position: absolute;
     width: 0%;
@@ -537,7 +538,7 @@ body {
 }
 
 /*상품소개박스*/
-.gdsec{
+.gdsec {
     position: relative;
     width: 100%;
     height: 500px;
@@ -545,27 +546,32 @@ body {
     /*넘치는 자식요소 숨기기*/
     outline: 2px dashed red;
 }
+
 /*상품소개 리스크 부모박스*/
-.gdsec ul{
+.gdsec ul {
     width: 300%;
     height: 100%;
-    
+
 }
+
 /*상품소개 리스트-li*/
-.gdsec>ul>li{
+.gdsec > ul > li {
     width: 33.33%;
     height: 100%;
     outline: 5px dotted orange;
 }
+
 /*각 li셋팅*/
-.gdsec>ul>li:nth-child(1){
+.gdsec > ul > li:nth-child(1) {
     background: url(../images/homepage_index1.jpg)no-repeat center/auto 100%;
 }
-.gdsec>ul>li:nth-child(2){
-     background: url(../images/homepage_index2.jpg)no-repeat center/auto 100%;
+
+.gdsec > ul > li:nth-child(2) {
+    background: url(../images/homepage_index2.jpg)no-repeat center/auto 100%;
 }
-.gdsec>ul>li:nth-child(3){
-     background: url(../images/homepage_index3.jpg)no-repeat center/auto 100%;
+
+.gdsec > ul > li:nth-child(3) {
+    background: url(../images/homepage_index3.jpg)no-repeat center/auto 100%;
 }
 
 /*5. 블로그링크영역(section.blog/1200*400)*/
@@ -573,11 +579,45 @@ body {
     height: 700px;
 }
 
+.bbox {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    /*각자의 박스에 내부에서만 보이게 처리 - 중요함!!*/
+    outline: 2px dashed red;
+}
+
+.bbox h3 {
+    position: absolute;
+    top: 40%;
+    width: 800px;
+    outline: 2px dotted blue;
+    font-size: 70px;
+    font-weight: bold;
+    transition: all 3s ease-out;
+}
+
+.bb1 {
+    background: url(../images/journal-img.jpg)no-repeat center/cover;
+}
+
+/*흰색글자*/
+.bb1 h3 {
+
+    /*    top: 25%;(검증)*/
+    left: 120%;
+    color: #fff;
+}
+
+/*검정색글자*/
+.bb2 h3 {
+    left: 20%;
+    color: #000;
+}
+
 /*6. 하단영역(footer.info/1200*500)*/
 .info {
     height: 500px;
 }
-
-
-
-
