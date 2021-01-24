@@ -240,8 +240,8 @@ body {
     cursor: pointer;
 }
 
-/*마우스 오버시 가상요소 배경검정*/
-.banbtn::before {
+/*마우스 오버시 가상요소 배경검정 - 공통*/
+.cmbtn::before {
     content: '';
     display: block;
     position: absolute;
@@ -256,24 +256,24 @@ body {
 
 /*마우스 오버시 js로클래스 주기
 배경가상요소 width 채우기*/
-.banbtn.on::before {
+.cmbtn.on::before {
     left: 0;
     width: 100%;
 }
 
 /*마우스 아웃시 js로클래스 주기
 배경가상요소 width 없애기*/
-.banbtn.off::before {
+.cmbtn.off::before {
     right: 0;
     width: 0%;
 }
 
 /*마우스오버시 글자색 흰색*/
-.banbtn.on > * {
+.cmbtn.on > * {
     color: #fff;
 }
 
-.banbtn > * {
+.cmbtn > * {
     position: relative;
     /*가상요소가 absolute이므로 다른 static요소들은 아래에 깔림
     그래서 겹칠 수 있는 position중 그자리에 가만히있는 relative를 주면 나중에 왔으므로 위에 위치할 수 있다.*/
@@ -579,10 +579,13 @@ body {
     height: 700px;
 }
 
+.actbox {}
+
 .bbox {
     position: relative;
-    width: 50%;
-    height: 100%;
+    width: calc(50% - 160px);
+    /*특정px빼고 나머지 양쪽등분*/
+    height: 480px;
     float: left;
     overflow: hidden;
     /*각자의 박스에 내부에서만 보이게 처리 - 중요함!!*/
@@ -591,31 +594,78 @@ body {
 
 .bbox h3 {
     position: absolute;
-    top: 40%;
+    top: 30%;
     width: 800px;
     outline: 2px dotted blue;
-    font-size: 70px;
+    font-size: 100px;
     font-weight: bold;
-    transition: all 3s ease-out;
+    transition: all 1s ease-out;
 }
 
-.bb1 {
+/*중앙박스*/
+.bb2 {
+    width: 320px;
+
     background: url(../images/journal-img.jpg)no-repeat center/cover;
 }
 
-/*흰색글자*/
-.bb1 h3 {
-
-    /*    top: 25%;(검증)*/
-    left: 120%;
+/*중앙박스 흰색글자*/
+.bb2 .mtxt2 {
+    top: 57%;
+    left: 100%;
     color: #fff;
 }
 
-/*검정색글자*/
-.bb2 h3 {
-    left: 20%;
+/*오른쪽 박스 검정색글자*/
+.bb3 .mtxt2 {
+    top: 57%;
+    left: 0%;
     color: #000;
 }
+
+/*중앙박스 흰색글자*/
+.bb2 .mtxt1 {
+    top: 30%;
+    right: 100%;
+    color: #fff;
+    text-align: right;
+}
+
+/*왼쪽 박스 검정색글자*/
+.bb1 .mtxt1 {
+    top: 30%;
+    right: 0%;
+    color: #000;
+    text-align: right;
+}
+
+
+/*블로그이동버튼*/
+.blgbtn {
+    position: absolute;
+    top: 34%;
+    left: 13%;
+    /*부모는?*/
+    height: 51px;
+    width: 171px;
+    background-color: #fff;
+    border: 1px solid #000;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 51px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
 
 /*6. 하단영역(footer.info/1200*500)*/
 .info {

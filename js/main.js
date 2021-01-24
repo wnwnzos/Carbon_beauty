@@ -12,22 +12,36 @@ window.addEventListener("DOMContentLoaded",
 
 
 
-        // 배너 마우스 오버/아웃시 class넣기/빼기
+        // 버튼공통 마우스 오버/아웃시 class넣기/빼기
         // 대상선정 : .banbtn
-        var bbn = document.querySelector(".banbtn");
+        var bbn = document.querySelectorAll(".cmbtn");
         // 마우스 오버시(.on 넣고 .off 빼기)
-        bbn.onmouseover = function () {
-            // this는 나 자신(.banbtn)
-            this.classList.add("on");
-            this.classList.remove("off");
-        }; // 마우스오버 ///////////////////////////////
+        // 요소의 수만큼 for문 셋팅하기
+        // for of문(선택된 요소만큼 반복함!!) - of 뒤에 쓴 변수!
+        for (var x of bbn) { // x는 각 요소 자신!
 
-        // 마우스 아웃시(.off 넣고 .on 빼기)
-        bbn.onmouseout = function () {
-            // this는 나 자신(.banbtn)
-            this.classList.add("off");
-            this.classList.remove("on");
-        }; // 마우스아웃 ///////////////////////////////
+            x.onmouseover = function () {
+                // this는 나 자신(.banbtn)
+                this.classList.add("on");
+                this.classList.remove("off");
+            }; // 마우스오버 ///////////////////////////////
+
+            // 마우스 아웃시(.off 넣고 .on 빼기)
+            x.onmouseout = function () {
+                // this는 나 자신(.banbtn)
+                this.classList.add("off");
+                this.classList.remove("on");
+            }; // 마우스아웃 ///////////////////////////////
+
+
+
+        } // for of 문//////////////////////////
+
+
+
+
+
+
 
 
         //////////////////////////////////////////////////////////
@@ -161,6 +175,9 @@ window.addEventListener("DOMContentLoaded",
         tgpos[0] = $("#blog").offset().top;
         console.log("블로그영역위치값:" + tgpos[0]);
 
+        // 시작기준값을 계산함!(원래위치값 - 윈도우절반)
+        tgpos[0] = tgpos[0] - winH / 2
+
 
 
     }); //////////////////////////////////// 로드구역 ////////////////////////////////////////////////
@@ -185,39 +202,99 @@ $(window).scroll(function () {
     //console.log("스위:"+scTop);
 
     // 블로그 영역 스크롤액션!
-    if (scTop > tgpos[0] - winH / 2 &&
-        scTop < tgpos[0]) {
+    if (scTop > tgpos[0] &&
+        scTop < tgpos[0] + 200) {
         console.log("움직여!");
-        
-        $(".bb1 h3").css({
-            left:(120-50)+"%"
+
+        $(".bb1 .mtxt2").css({
+            left: (320 - 50) + "px"
         });
-        $(".bb2 h3").css({
-            left:(20-50)+"%"
+        $(".bb3 .mtxt2").css({
+            left: (0 - 50) + "px"
         });
-        
-        
-    }// if //////////////////////////////
+
+        $(".bb2 .mtxt1").css({
+            right: (320 - 50) + "px"
+        });
+        $(".bb1 .mtxt1").css({
+            right: (0 - 50) + "px"
+        });
+
+
+    } // if //////////////////////////////
     // 블로그 영역 스크롤액션!
-    else if (scTop > tgpos[0] &&
-        scTop < tgpos[0]+200) {
+    else if (scTop > tgpos[0] + 200 &&
+        scTop < tgpos[0] + 400) {
         console.log("움직여!");
-        
-        $(".bb1 h3").css({
-            left:(120-100)+"%"
+
+        $(".bb2 .mtxt2").css({
+            left: (320 - 100) + "px"
         });
-        $(".bb2 h3").css({
-            left:(20-100)+"%"
+        $(".bb3 .mtxt2").css({
+            left: (0 - 100) + "px"
         });
-        
-        
-    }// esle if ///////////////////////
-    else{
-         $(".bb1 h3").css({
-            left:(120)+"%"
+
+        $(".bb2 .mtxt1").css({
+            right: (320 - 100) + "px"
         });
-        $(".bb2 h3").css({
-            left:(20)+"%"
+        $(".bb1 .mtxt1").css({
+            right: (0 - 100) + "px"
+        });
+
+
+    } // esle if ///////////////////////
+    else if (scTop > tgpos[0] + 400 &&
+        scTop < tgpos[0] + 600) {
+        console.log("움직여!");
+
+        $(".bb2 .mtxt2").css({
+            left: (320 - 150) + "px"
+        });
+        $(".bb3 .mtxt2").css({
+            left: (0 - 150) + "px"
+        });
+
+        $(".bb2 .mtxt1").css({
+            right: (320 - 150) + "px"
+        });
+        $(".bb1 .mtxt1").css({
+            right: (0 - 150) + "px"
+        });
+
+    } // esle if ///////////////////////
+    else if (scTop > tgpos[0] + 600 &&
+        scTop < tgpos[0] + 800) {
+        console.log("움직여!");
+
+        $(".bb2 .mtxt2").css({
+            left: (320 - 200) + "px"
+        });
+        $(".bb3 .mtxt2").css({
+            left: (0 - 200) + "px"
+        });
+
+        $(".bb2 .mtxt1").css({
+            right: (320 - 200) + "px"
+        });
+        $(".bb1 .mtxt1").css({
+            right: (0 - 200) + "px"
+        });
+
+
+    } // esle if ///////////////////////
+    else {
+        $(".bb2 .mtxt2").css({
+            left: (320) + "px"
+        });
+        $(".bb3 .mtxt2").css({
+            left: (0) + "px"
+        });
+
+        $(".bb2 .mtxt1").css({
+            right: (320) + "px"
+        });
+        $(".bb1 .mtxt1").css({
+            right: (0) + "px"
         });
     }
 
