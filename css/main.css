@@ -207,6 +207,37 @@ body {
     line-height: 82px;
 }
 
+/*1.5. 무빙레터1*************/
+
+.mtit1{
+    position: fixed;
+    top: 100px;
+    left: 30%;
+    font-size: 170px;
+    font-weight: bold;
+    transition: left .8s ease-out;
+}
+
+/*2.5. 무빙레터2*************/
+
+.mtit2{
+    position: fixed;
+    top: 300px;
+    left: 50%;
+    font-size: 170px;
+    font-weight: bold;
+    transition: left .6s ease-out;
+}
+
+/*무빙레터 li*/
+.mtit1 li, mtit2 li{
+    padding: 0 5px;
+}
+
+
+
+
+
 /*2. 배너영역(section.ban/1200*500)****************************************/
 #ban .inbox {
     margin: 0;

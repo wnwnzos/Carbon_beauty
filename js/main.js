@@ -9,6 +9,45 @@ window.addEventListener("DOMContentLoaded",
         // 부드러운 스크롤 함수 호출!
         startSS();
 
+        // 무빙레터 구현!!! 1/////////////////
+        $(".stg1").html('<ul class="mtit1"></ul>');
+        let mtxt1 = "Carbon Beauty";
+
+        // 글자개수만큼  .mtit1의 크기를 설정해준다!(글자가 안떨어지게함!)
+        $(".mtit1").css({
+            width: (100 * mtxt1.length) + "px"
+        }); // css ////////////////////
+
+
+        // for문으로 글자만큼 li만들기!!
+        // for of문 -> 배열, 요소컬렉션, 문자열데이터를 그 개수만큼 자동으로 돈다!
+        // for of문의 지역변수 -> 그 데이터나 요소 자체임!
+        for (var x of mtxt1) {
+            if (x === " ") x = "&nbsp;"; // 공백문자 빈값에 넣기
+            $(".mtit1").append('<li>' + x + '</li>');
+
+        } /// for of문 /////////////
+    
+    
+  // 무빙레터 구현!!! 2/////////////////
+        $(".stg2").html('<ul class="mtit2"></ul>');
+        let mtxt2 = "Fall Picks";
+
+        // 글자개수만큼  .mtit1의 크기를 설정해준다!(글자가 안떨어지게함!)
+        $(".mtit2").css({
+            width: (100 * mtxt2.length) + "px"
+        }); // css ////////////////////
+
+
+        // for문으로 글자만큼 li만들기!!
+        // for of문 -> 배열, 요소컬렉션, 문자열데이터를 그 개수만큼 자동으로 돈다!
+        // for of문의 지역변수 -> 그 데이터나 요소 자체임!
+        for (var x of mtxt2) {
+            if (x === " ") x = "&nbsp;"; // 공백문자 빈값에 넣기
+            $(".mtit2").append('<li>' + x + '</li>');
+
+        } /// for of문 /////////////
+
 
 
 
@@ -296,6 +335,32 @@ $(window).scroll(function () {
         $(".bb1 .mtxt1").css({
             right: (0) + "px"
         });
+    }//// else /////////////////
+    
+    // 무빙레터 ///////////////////////////
+    if(scTop < 100){
+        $(".mtit1").css({left:"30%"});
+        $(".mtit2").css({left:"50%"});
+    }// if //////////////////////////////////
+    else if(scTop > 100 && scTop < 200){
+        $(".mtit1").css({left:"10%"});
+        $(".mtit2").css({left:"20%"});
+    }
+    else if(scTop > 200 && scTop < 300){
+        $(".mtit1").css({left:"-20%"});
+        $(".mtit2").css({left:"-10%"});
+    }
+    else if(scTop > 300 && scTop < 400){
+        $(".mtit1").css({left:"-50%"});
+        $(".mtit2").css({left:"-30%"});
+    }
+    else if(scTop > 400 && scTop < 500){
+        $(".mtit1").css({left:"-80%"});
+        $(".mtit2").css({left:"-50%"});
+    }
+    else if(scTop > 500 && scTop < 600){
+        $(".mtit1").css({left:"-120%"});
+        $(".mtit2").css({left:"-100%"});
     }
 
 
